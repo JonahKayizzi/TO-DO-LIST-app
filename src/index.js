@@ -22,9 +22,9 @@ window.onload = () => {
     sortedTasks.forEach((task) => {
       const taskElement = createHTMLElement('li', 'task-item', 'task-item', '', tasksContainer);
       createInputElement('input', 'task-complete', 'task-complete', 'checkbox', 'task-complete', '', taskElement);
-      createInputElement('input', 'task-edit text-inp', 'task-edit', 'text', 'task-edit', `${task.description}`, taskElement);
-      const taskEdit = createHTMLElement('button', 'task-edit', `${task.index}`, '<i class="fa fa-arrows" aria-hidden="true"></i>', taskElement);
-      const taskDrag = createHTMLElement('button', 'task-drag', 'task-drag', '<i class="fa fa-ellipsis-v" aria-hidden="true"></i>', taskElement);
+      const taskEdit = createInputElement('input', 'task-edit text-inp', 'task-edit', 'text', 'task-edit', `${task.description}`, taskElement);
+      const taskDrag = createHTMLElement('button', 'task-edit', `${task.index}`, '<i class="fa fa-arrows" aria-hidden="true"></i>', taskElement);
+      createHTMLElement('button', 'task-drag', 'task-drag', '<i class="fa fa-ellipsis-v" aria-hidden="true"></i>', taskElement);
       const taskDelete = createHTMLElement('button', 'task-delete', `${task.index}`, '<i class="fa fa-trash-o" aria-hidden="true"></i>', taskElement);
 
       taskDelete.addEventListener('click', (e) => {
@@ -38,9 +38,9 @@ window.onload = () => {
       // do something
       });
 
-      taskEdit.addEventListener('click', (e) => {
+      taskEdit.addEventListener('change', (e) => {
         e.preventDefault();
-      // do something
+        myTaskList.updateTask(taskEdit.value, taskDelete.id);
       });
     });
     if (myTaskList.tasks.length !== 0) {

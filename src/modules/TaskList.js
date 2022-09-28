@@ -13,12 +13,12 @@ class TaskList {
   };
 
   removeTask = (index) => {
-    this.tasks = this.tasks.filter((element, i) => {
-      if (i === parseInt(index, 10)) {
-        return false;
+    this.tasks.forEach((task, i) => {
+      if (task.index === parseInt(index, 10)) {
+        this.tasks.splice(i, 1);
       }
-      return true;
     });
+    localStorage.setItem('storedTasks', JSON.stringify(this.tasks));
     return this.tasks;
   }
 }

@@ -16,7 +16,6 @@ window.onload = () => {
       e.preventDefault();
       const newTask = document.querySelector('.new-task');
       myTaskList.addTask(newTask.value, false, myTaskList.tasks.length);
-      console.log(myTaskList);
       populateTasks();
     });
 
@@ -30,7 +29,7 @@ window.onload = () => {
 
       taskDelete.addEventListener('click', (e) => {
         e.preventDefault();
-        myTaskList.tasks.delete(taskDelete.id);
+        myTaskList.removeTask(taskDelete.id);
         populateTasks();
       });
 
@@ -44,14 +43,15 @@ window.onload = () => {
       // do something
       });
     });
-    const clearButton = createHTMLElement('li', 'task-item', 'task-item', '', tasksContainer);
-    createHTMLElement('button', 'clear-completed', 'clear-completed', 'Clear all completed', clearButton);
+    if (myTaskList.tasks.length !== 0) {
+      const clearButton = createHTMLElement('li', 'task-item', 'task-item', '', tasksContainer);
+      createHTMLElement('button', 'clear-completed', 'clear-completed', 'Clear all completed', clearButton);
+    }
   };
 
   const storedTasks = JSON.parse(window.localStorage.getItem('storedTasks'));
   if (storedTasks) {
     myTaskList.tasks = storedTasks;
-    console.log(myTaskList.tasks);
-    populateTasks();
   }
+  populateTasks();
 };

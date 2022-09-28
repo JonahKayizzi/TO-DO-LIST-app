@@ -14,7 +14,6 @@ const populateTasks = () => {
     e.preventDefault();
     const newTask = document.querySelector('.new-task');
     myTaskList.addTask(newTask.value, false, myTaskList.tasks.length + 1);
-    console.log(myTaskList);
     populateTasks();
   });
 
@@ -28,7 +27,8 @@ const populateTasks = () => {
 
     taskDelete.addEventListener('click', (e) => {
       e.preventDefault();
-      myTaskList.tasks.delete(taskDelete.id);
+      myTaskList.removeTask(taskDelete.id);
+      console.log(myTaskList);
       populateTasks();
     });
 
@@ -42,6 +42,7 @@ const populateTasks = () => {
       // do something
     });
   });
+
   const clearButton = createHTMLElement('li', 'task-item', 'task-item', '', tasksContainer);
   createHTMLElement('button', 'clear-completed', 'clear-completed', 'Clear all completed', clearButton);
 };

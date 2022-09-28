@@ -10,6 +10,18 @@ body {
   width: 80%;
   overflow: hidden;
   color: #545862;
+  box-shadow: 5px 5px 5px 5px #888;
+  padding: 1em;
+}
+
+.list-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  height: 2em;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.08);
 }
 
 .main-section h1 {
@@ -18,17 +30,20 @@ body {
   padding: 1rem 0;
   line-height: 20px;
   margin: 0;
-  width: 100%;
+  width: 80%;
+}
+
+.refresh {
   height: 2em;
-  border-bottom: solid 1px rgba(0, 0, 0, 0.08);
 }
 
 .todolist-placeholder {
   list-style: none;
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
-  padding: 0 1em;
+  padding: 0;
   margin: 0;
   color: #222;
 }
@@ -43,4 +58,33 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.text-inp {
+  width: 80%;
+  border: 0;
+  padding: 0 1em;
+  height: 1em;
+  box-sizing: border-box;
+  font-family: inherit;
+  outline: 0;
+}
+
+button {
+  border: 0;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.task-more,
+.task-drag {
+  display: none;
+}
+
+.clear-completed {
+  width: inherit;
+  background-color: #e0e0e0;
+  height: inherit;
 }

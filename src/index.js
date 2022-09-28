@@ -23,7 +23,7 @@ window.onload = () => {
       const taskElement = createHTMLElement('li', 'task-item', 'task-item', '', tasksContainer);
       createInputElement('input', 'task-complete', 'task-complete', 'checkbox', 'task-complete', '', taskElement);
       const taskEdit = createInputElement('input', 'task-edit text-inp', 'task-edit', 'text', 'task-edit', `${task.description}`, taskElement);
-      const taskDrag = createHTMLElement('button', 'task-edit', `${task.index}`, '<i class="fa fa-arrows" aria-hidden="true"></i>', taskElement);
+      const taskDrag = createHTMLElement('button', 'task-more', `${task.index}`, '<i class="fa fa-arrows" aria-hidden="true"></i>', taskElement);
       createHTMLElement('button', 'task-drag', 'task-drag', '<i class="fa fa-ellipsis-v" aria-hidden="true"></i>', taskElement);
       const taskDelete = createHTMLElement('button', 'task-delete', `${task.index}`, '<i class="fa fa-trash-o" aria-hidden="true"></i>', taskElement);
 

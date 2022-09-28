@@ -15,7 +15,8 @@ window.onload = () => {
     addTaskBtn.addEventListener('click', (e) => {
       e.preventDefault();
       const newTask = document.querySelector('.new-task');
-      myTaskList.addTask(newTask.value, false, myTaskList.tasks.length);
+      const nxtIndex = myTaskList.tasks.length + 1;
+      myTaskList.addTask(newTask.value, false, nxtIndex);
       populateTasks();
     });
 

@@ -18,6 +18,9 @@ class TaskList {
         this.tasks.splice(i, 1);
       }
     });
+    this.tasks.forEach((e, i) => {
+      e.index = i + 1;
+    });
     localStorage.setItem('storedTasks', JSON.stringify(this.tasks));
     return this.tasks;
   }

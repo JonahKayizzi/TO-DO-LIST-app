@@ -1,7 +1,47 @@
-.hello {
-  color: blue;
+body {
+  background-color: #f1f2f5;
+  font-family: "Open Sans", "Lucida Grande", tahoma, verdana, arial, sans-serif;
 }
 
-body {
-  background-color: bisque;
+.main-section {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  overflow: hidden;
+  color: #545862;
+}
+
+.main-section h1 {
+  font-size: 15px;
+  font-weight: 400;
+  padding: 1rem 0;
+  line-height: 20px;
+  margin: 0;
+  width: 100%;
+  height: 2em;
+  padding: 1em;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.08);
+}
+
+.todolist-placeholder {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 1em;
+  margin: 0;
+  color: #222;
+}
+
+.task-item {
+  width: 100%;
+  height: 3em;
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 20px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }

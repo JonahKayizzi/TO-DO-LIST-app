@@ -7,7 +7,9 @@ class TaskList {
 
   addTask = (desc, status, idx) => {
     const task = new Task(desc, status, idx);
-    return this.tasks.push(task);
+    this.tasks.push(task);
+    localStorage.setItem('storedTasks', JSON.stringify(this.tasks));
+    return this.tasks;
   };
 
   removeTask = (index) => {
@@ -22,7 +24,5 @@ class TaskList {
 }
 
 const myTaskList = new TaskList();
-
-myTaskList.addTask('To do today', true, 1);
 
 export default myTaskList;

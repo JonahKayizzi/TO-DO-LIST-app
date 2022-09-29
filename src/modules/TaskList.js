@@ -34,6 +34,30 @@ class TaskList {
     localStorage.setItem('storedTasks', JSON.stringify(this.tasks));
     return this.tasks;
   }
+
+  completionStatus = (index) => {
+    this.tasks.forEach((task) => {
+      if (task.index === parseInt(index, 10)) {
+        task.completed = !task.completed;
+      }
+    });
+    localStorage.setItem('storedTasks', JSON.stringify(this.tasks));
+    return this.tasks;
+  }
+
+  clearCompleted = () => {
+    this.tasks = this.tasks.filter((element) => {
+      if (element.completed === true) {
+        return false;
+      }
+      return true;
+    });
+    this.tasks.forEach((e, i) => {
+      e.index = i + 1;
+    });
+    localStorage.setItem('storedTasks', JSON.stringify(this.tasks));
+    return this.tasks;
+  }
 }
 
 const myTaskList = new TaskList();

@@ -65,7 +65,7 @@ body {
 .text-inp {
   width: 80%;
   border: 0;
-  padding: 0 1em;
+  padding: 1em;
   height: 1em;
   box-sizing: border-box;
   font-family: inherit;

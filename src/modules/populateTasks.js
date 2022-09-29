@@ -2,8 +2,6 @@ import {
   createHTMLElement, createInputElement, createTaskInputItem, createClearBtn,
 } from './createHTMLelement.js';
 import myTaskList from './TaskList.js';
-// eslint-disable-next-line import/no-cycle
-import { addTaskEvent, clearCompletedTasksEvent } from './crud.js';
 
 const populateTasks = () => {
   const tasksContainer = document.querySelector('.todolist-placeholder');
@@ -11,8 +9,14 @@ const populateTasks = () => {
   tasksContainer.innerHTML = '';
 
   createTaskInputItem();
-
-  addTaskEvent();
+  const addTaskBtn = document.querySelector('.add-task');
+  addTaskBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const newTask = document.querySelector('.new-task');
+    const nxtIndex = myTaskList.tasks.length + 1;
+    myTaskList.addTask(newTask.value, false, nxtIndex);
+    populateTasks();
+  });
 
   sortedTasks.forEach((task) => {
     const taskElement = createHTMLElement('li', 'task-item', 'task-item', '', tasksContainer);
@@ -46,7 +50,12 @@ const populateTasks = () => {
   });
   if (myTaskList.tasks.length !== 0) {
     createClearBtn();
-    clearCompletedTasksEvent();
+    const clearButton = document.querySelector('.clear-completed');
+    clearButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      myTaskList.clearCompleted();
+      populateTasks();
+    });
   }
 };
 

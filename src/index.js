@@ -4,8 +4,6 @@ import populateTasks from './modules/populateTasks.js';
 
 window.onload = () => {
   const storedTasks = JSON.parse(window.localStorage.getItem('storedTasks'));
-  if (storedTasks) {
-    myTaskList.tasks = storedTasks;
-  }
+  myTaskList.tasks = storedTasks || myTaskList.tasks;
   populateTasks();
 };

@@ -1,18 +1,18 @@
 import {
-  createHTMLElement, createInputElement, createTaskInputItem, createClearBtn,
+  createHTMLElement, selectElement, createTaskInputItem, createClearBtn,
 } from './createHTMLelement.js';
 import myTaskList from './TaskList.js';
 
 const populateTasks = () => {
-  const tasksContainer = document.querySelector('.todolist-placeholder');
+  const tasksContainer = selectElement('.todolist-placeholder');
   const sortedTasks = myTaskList.tasks.sort((a, b) => (b.index - a.index));
   tasksContainer.innerHTML = '';
 
   createTaskInputItem();
-  const addTaskBtn = document.querySelector('.add-task');
+  const addTaskBtn = selectElement('.add-task');
   addTaskBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    const newTask = document.querySelector('.new-task');
+    const newTask = selectElement('.new-task');
     const nxtIndex = myTaskList.tasks.length + 1;
     myTaskList.addTask(newTask.value, false, nxtIndex);
     populateTasks();
@@ -21,8 +21,8 @@ const populateTasks = () => {
   sortedTasks.forEach((task) => {
     const taskElement = createHTMLElement('li', 'task-item', 'task-item', '', tasksContainer);
     taskElement.draggable = true;
-    const checkComplete = createInputElement('input', 'task-complete', `${task.index}`, 'checkbox', 'task-complete', '', taskElement);
-    const taskEdit = createInputElement('input', 'task-edit text-inp', 'task-edit', 'text', 'task-edit', `${task.description}`, taskElement);
+    const checkComplete = createHTMLElement('input', 'task-complete', `${task.index}`, '', taskElement, 'checkbox', 'task-complete');
+    const taskEdit = createHTMLElement('input', 'task-edit text-inp', 'task-edit', '', taskElement, 'text', 'task-edit', `${task.description}`);
     if (task.completed === true) {
       taskEdit.style.textDecoration = 'line-through';
       checkComplete.checked = true;
@@ -50,7 +50,7 @@ const populateTasks = () => {
   });
   if (myTaskList.tasks.length !== 0) {
     createClearBtn();
-    const clearButton = document.querySelector('.clear-completed');
+    const clearButton = selectElement('.clear-completed');
     clearButton.addEventListener('click', (e) => {
       e.preventDefault();
       myTaskList.clearCompleted();

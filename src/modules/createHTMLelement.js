@@ -1,20 +1,12 @@
-const createHTMLElement = (newElement, className, id, inHTML, parent) => {
-  const element = document.createElement(`${newElement}`);
-  element.className = `${className}`;
-  element.id = `${id}`;
-  element.innerHTML = `${inHTML}`;
-  parent.appendChild(element);
-  return element;
-};
-
-const createInputElement = (newElement, className, id, type, name, value, parent) => {
-  const element = document.createElement(`${newElement}`);
-  element.className = `${className}`;
-  element.id = `${id}`;
-  element.type = `${type}`;
-  element.name = `${name}`;
-  element.value = `${value}`;
-  parent.appendChild(element);
+const createHTMLElement = (...args) => {
+  const element = document.createElement(`${args[0]}`);
+  element.className = `${args[1]}`;
+  element.id = `${args[2]}`;
+  element.innerHTML = `${args[3]}`;
+  element.type = `${args[5]}`;
+  element.name = `${args[6]}`;
+  element.value = `${args[7]}`;
+  args[4].appendChild(element);
   return element;
 };
 
@@ -22,7 +14,7 @@ const tasksContainer = document.querySelector('.todolist-placeholder');
 
 const createTaskInputItem = () => {
   const taskItem = createHTMLElement('li', 'task-item', 'task-item', '', tasksContainer);
-  const taskInput = createInputElement('input', 'new-task text-inp', 'new-task', 'text', 'new-task', '', taskItem);
+  const taskInput = createHTMLElement('input', 'new-task text-inp', 'new-task', '', taskItem, 'text', 'new-task', '');
   taskInput.placeholder = 'Add to your list';
   createHTMLElement('button', 'add-task', 'add-task', '<i class="fa fa-arrow-circle-left" aria-hidden="true"></i>', taskItem);
 };
@@ -32,6 +24,8 @@ const createClearBtn = () => {
   createHTMLElement('button', 'clear-completed', 'clear-completed', 'Clear all completed', clearButton);
 };
 
+const selectElement = (element) => document.querySelector(element);
+
 export {
-  createHTMLElement, createInputElement, createTaskInputItem, createClearBtn,
+  selectElement, createHTMLElement, createTaskInputItem, createClearBtn,
 };

@@ -10,10 +10,10 @@ describe('Updated task description', () => {
 
 describe('Updated task completion status', () => {
   test('Completed status should change from previous state', () => {
-    myTaskList.tasks.
-    const prevSta = myTaskList.tasks
+    const prevSta = myTaskList.tasks[1].completed;
     myTaskList.completionStatus(2);
-    expect()
+    const currSta = myTaskList.tasks[1].completed
+    expect(currSta).not.toEqual(prevSta);
   });
 });
 

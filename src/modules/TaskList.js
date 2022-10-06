@@ -8,7 +8,7 @@ export default class TaskList {
   addTask = (desc, status, idx) => {
     const task = new Task(desc, status, idx);
     this.tasks.push(task);
-    //localStorage.setItem('storedTasks', JSON.stringify(this.tasks));
+    // localStorage.setItem('storedTasks', JSON.stringify(this.tasks));
     return this.tasks;
   };
 
@@ -23,17 +23,17 @@ export default class TaskList {
     });
     localStorage.setItem('storedTasks', JSON.stringify(this.tasks));
     return this.tasks;
-  }
+  };
 
-  updateTask =(desc, index) => {
+  updateTask = (desc, index) => {
     this.tasks.forEach((task) => {
       if (task.index === parseInt(index, 10)) {
         task.description = desc;
       }
     });
-    localStorage.setItem('storedTasks', JSON.stringify(this.tasks));
+    // localStorage.setItem('storedTasks', JSON.stringify(this.tasks));
     return this.tasks;
-  }
+  };
 
   completionStatus = (index) => {
     this.tasks.forEach((task) => {
@@ -41,9 +41,9 @@ export default class TaskList {
         task.completed = !task.completed;
       }
     });
-    //localStorage.setItem('storedTasks', JSON.stringify(this.tasks));
+    // localStorage.setItem('storedTasks', JSON.stringify(this.tasks));
     return this.tasks;
-  }
+  };
 
   clearCompleted = () => {
     this.tasks = this.tasks.filter((element) => {
@@ -55,11 +55,11 @@ export default class TaskList {
     this.tasks.forEach((e, i) => {
       e.index = i + 1;
     });
-   // localStorage.setItem('storedTasks', JSON.stringify(this.tasks));
+    // localStorage.setItem('storedTasks', JSON.stringify(this.tasks));
     return this.tasks;
-  }
+  };
 }
 
-//const myTaskList = new TaskList();
+// const myTaskList = new TaskList();
 
-//export default myTaskList;
+// export default myTaskList;

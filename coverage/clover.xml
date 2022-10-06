@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1665079937642" clover="3.2.0">
+  <project timestamp="1665079937642" name="All files">
+    <metrics statements="34" coveredstatements="19" conditionals="9" coveredconditionals="5" methods="13" coveredmethods="7" elements="56" coveredelements="31" complexity="0" loc="34" ncloc="34" packages="1" files="2" classes="2"/>
+    <file name="Task.js" path="H:\05. Microverse\02. Core Curriculum\Projects\Module-2\TO-DO-LIST\webpack\src\modules\Task.js">
+      <metrics statements="3" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <line num="3" count="0" type="stmt"/>
+      <line num="4" count="0" type="stmt"/>
+      <line num="5" count="0" type="stmt"/>
+    </file>
+    <file name="TaskList.js" path="H:\05. Microverse\02. Core Curriculum\Projects\Module-2\TO-DO-LIST\webpack\src\modules\TaskList.js">
+      <metrics statements="31" coveredstatements="19" conditionals="8" coveredconditionals="5" methods="12" coveredmethods="7"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="9" count="0" type="stmt"/>
+      <line num="10" count="0" type="stmt"/>
+      <line num="12" count="0" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="16" count="0" type="stmt"/>
+      <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="18" count="0" type="stmt"/>
+      <line num="21" count="0" type="stmt"/>
+      <line num="22" count="0" type="stmt"/>
+      <line num="24" count="0" type="stmt"/>
+      <line num="25" count="0" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
+      <line num="30" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="31" count="1" type="stmt"/>
+      <line num="35" count="1" type="stmt"/>
+      <line num="38" count="1" type="stmt"/>
+      <line num="39" count="1" type="stmt"/>
+      <line num="40" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="41" count="1" type="stmt"/>
+      <line num="45" count="1" type="stmt"/>
+      <line num="48" count="1" type="stmt"/>
+      <line num="49" count="1" type="stmt"/>
+      <line num="50" count="2" type="cond" truecount="1" falsecount="1"/>
+      <line num="51" count="2" type="stmt"/>
+      <line num="53" count="0" type="stmt"/>
+      <line num="55" count="1" type="stmt"/>
+      <line num="56" count="0" type="stmt"/>
+      <line num="59" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

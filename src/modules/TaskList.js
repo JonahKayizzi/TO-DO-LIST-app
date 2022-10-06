@@ -41,7 +41,7 @@ export default class TaskList {
         task.completed = !task.completed;
       }
     });
-    localStorage.setItem('storedTasks', JSON.stringify(this.tasks));
+    //localStorage.setItem('storedTasks', JSON.stringify(this.tasks));
     return this.tasks;
   }
 

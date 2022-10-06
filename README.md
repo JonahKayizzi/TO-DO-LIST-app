@@ -4,7 +4,7 @@
 
 # TO-DO-LIST-app
 
-The goal of this project is to learn the use of webpack to handle JS and ES6 to write modular JS
+The goal of this project is to learn the use of webpack to handle JS and ES6 to write modular JS, and use of the JEST framework to perform unit testing
 
 ## Built With
 
@@ -13,6 +13,7 @@ The goal of this project is to learn the use of webpack to handle JS and ES6 to 
 - JavaScript
 - ES6
 - webpack
+- JEST framework
 
 ## Live Demo
 
@@ -35,6 +36,10 @@ run the following commands in your terminal
 👤 **Author1**
 
 - GitHub: [@JonahKayizzi](https://github.com/JonahKayizzi)
+
+👤 **Author2**
+
+- GitHub: [@]Shedrack Sunday(https://github.com/Shedrack-Sunday)
 
 ## 🤝 Contributing
 
